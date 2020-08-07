@@ -76,7 +76,7 @@ const dateCalculator = (enlistmentDate, dischargeDate) => {
 	let pastTime = Math.ceil((now - enlistment) / (1000 * 60 * 60 * 24));
 
 	let calculatedDays = duration - pastTime + 1;
-	let percentage = (calculatedDays / 549).toFixed(2);
+	let percentage = (duration - calculatedDays / duration).toFixed(2);
 
 	if (pastTime <= 0) {
 		calculatedDays = Math.ceil((discharge - now) / (1000 * 60 * 60 * 24));
